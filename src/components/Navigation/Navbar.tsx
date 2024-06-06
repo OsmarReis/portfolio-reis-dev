@@ -1,6 +1,10 @@
 import NavItem from "./NavItem"
 
-export default function Navbar() {
+interface NavBarProps{
+  className?: string;
+}
+
+export default function Navbar({className}: NavBarProps) {
   const navPaths = [
     {
       text: "Home",
@@ -30,7 +34,7 @@ export default function Navbar() {
 
 
   return(
-    <nav>
+    <nav className={className ?? ""}>
       <ul className="flex flex-col gap-6">
         {navPaths.map((item, index) => 
           <NavItem

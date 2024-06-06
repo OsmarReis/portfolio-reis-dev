@@ -25,7 +25,7 @@ export default function CollapsibleBar(){
     return (
       <div>
         <HamburgMenu/>
-        <Navbar className="p-8"/>
+        <Navbar className="z-50 p-8 absolute left-0 top-16 bg-yellow-200 w-screen"/>
       </div>
     )
   }
