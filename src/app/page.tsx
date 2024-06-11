@@ -17,6 +17,8 @@ import ScreenSearchDesktopIcon from "@mui/icons-material/ScreenSearchDesktop"; /
 import GitHubIcon from "@mui/icons-material/GitHub";
 import XIcon from "@mui/icons-material/X";
 import InstagramIcon from "@mui/icons-material/Instagram";
+import ThemedText from "@/components/ThemedText";
+import Form from "@/components/Form";
 
 export default function Home() {
   return (
@@ -74,8 +76,12 @@ export default function Home() {
         <section id="Portfolio" className=" h-screen">
           Portfolio
         </section>
-        <section id="Contact" className=" h-screen">
-          Contact
+        <section id="Contact" className="px-8 h-screen">
+          <ThemedText>
+            Contact
+          </ThemedText>
+
+          <Form />
         </section>
       </main>
       <Footer></Footer>
