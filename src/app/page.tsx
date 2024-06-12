@@ -67,21 +67,65 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="About" className=" h-screen">
-          About
+        <section id="About" className="py-20">
+        <ThemedText>
+            About
+          </ThemedText>
         </section>
-        <section id="Resume" className=" h-screen">
-          Resume
+        <section id="Resume" className="py-20">
+        <ThemedText>
+            Resume
+          </ThemedText>
         </section>
-        <section id="Portfolio" className=" h-screen">
-          Portfolio
+        <section id="Portfolio" className="py-20">
+        <ThemedText>
+            Portfolio
+          </ThemedText>
         </section>
-        <section id="Contact" className="px-8 h-screen">
+        <section id="Contact" className="px-8 py-20">
           <ThemedText>
             Contact
           </ThemedText>
 
+          <div className="flex flex-col gap-20">
           <Form />
+          <div>
+          <h1 className="text-2xl font-medium">Contact Info</h1>
+            <p className="text-sm font-light mt-4 mb-6 text-justify">Lorem ipsum dolor sit amet consectetur. Sagittis vulputate vulputate nibh tellus dignissim laoreet arcu malesuada.</p>
+            <ul className="flex flex-col gap-8 mb-12">
+            <li className="flex gap-5 items-center">
+              <div className=" size-14 bg-yellow-400 border border-black rounded-full"></div>
+                <div className="flex flex-col">
+                  <h3 className="font-medium text-lg">Email</h3>
+                  <span className="font-light text-sm">reisdev.ti@gmail.com</span>
+                  <span className="font-light text-sm">info@support.com</span>
+                </div>
+              </li>
+              <li className="flex gap-5 items-center">
+                <div className="size-14 bg-yellow-400 border border-black rounded-full"></div>
+                <div className="flex flex-col">
+                <h3 className="font-medium text-lg">Phone</h3>
+                  <div className="flex flex-col">
+                  <span className="font-light text-sm">+55 61 999787899</span>
+                  <span className="font-light text-sm">+55 61 123456789</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <h2 className="text-xl font-medium my-6" >Visit my social profiles below!</h2>
+            <ul className="flex gap-6">
+              <li>
+              <div className="size-12 bg-yellow-400 border border-black rounded-full"></div>
+              </li>
+              <li>
+              <div className="size-12 bg-yellow-400 border border-black rounded-full"></div>
+              </li>
+              <li>
+              <div className="size-12 bg-yellow-400 border border-black rounded-full"></div>
+              </li>
+            </ul>
+          </div>
+          </div>
         </section>
       </main>
       <Footer></Footer>
