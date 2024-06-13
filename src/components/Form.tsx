@@ -4,10 +4,10 @@ import { FormEvent, useState } from "react";
 import InputLayout from "./InputLayout";
 
 interface FormContent {
-  name: string | null;
-  email: string | null;
-  subject: string | null;
-  message: string | null;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 }
 
 export default function Form() {
@@ -39,41 +39,45 @@ export default function Form() {
     },
   };
 
-  const handleSubmit = (event: FormEvent) => {
-    console.log(formValues);
-    event.defaultPrevented;
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    console.log(formValues)
   };
 
   return (
-    <form className="flex flex-col gap-6 max-w-96">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-6 max-w-96">
       <h1 className="text-2xl font-medium mb-2 pl-1">Say Hi!</h1>
       <InputLayout
         id={form_content.id.name}
         placeholder={form_content.placeholders.name}
-        value={formValues.name}
-        onChange={(event: FormEvent) => {
-          setFormValues({ ...formValues, name: event.currentTarget.nodeValue });
+        required={true}
+        // value={formValues.name}
+        onChange={(event: FormEvent<HTMLInputElement>) => {
+          setFormValues({ ...formValues, name: event.currentTarget.value });
         }}
       />
       <InputLayout
         id={form_content.id.email}
         placeholder={form_content.placeholders.email}
-        value={formValues.email}
-        onChange={(event: FormEvent) => {
+        required={true}
+        // value={formValues.email}
+        onChange={(event: FormEvent<HTMLInputElement>) => {
           setFormValues({
             ...formValues,
-            email: event.currentTarget.nodeValue,
+            email: event.currentTarget.value,
           });
         }}
       />
       <InputLayout
         id={form_content.id.subject}
         placeholder={form_content.placeholders.subject}
-        value={formValues.subject}
-        onChange={(event: FormEvent) => {
+        required={true}
+        // value={formValues.subject}
+        onChange={(event: FormEvent<HTMLInputElement>) => {
           setFormValues({
             ...formValues,
-            subject: event.currentTarget.nodeValue,
+            subject: event.currentTarget.value,
           });
         }}
       />
@@ -82,10 +86,16 @@ export default function Form() {
         placeholder={form_content.placeholders.message}
         rows={5}
         className="px-5 py-3 text-sm text-slate-900 border border-slate-200 rounded-lg placeholder:text-slate-200 hover:border-slate-500 duration-200"
+        onChange={(event: FormEvent<HTMLTextAreaElement>) => {
+          setFormValues({
+            ...formValues,
+            message: event.currentTarget.value,
+          });
+        }}
       />
       <button
-        className="bg-red-500 text-white text-sm px-5 py-3 rounded-lg hover:bg-white hover:text-red-500 hover:border hover:border-red-500 duration-300"
-        onSubmit={handleSubmit}
+        type="submit"
+        className="bg-red-500 text-white text-sm px-5 py-3 rounded-lg hover:bg-white hover:text-red-500 border border-red-500 duration-300"
       >
         Send Message
       </button>
