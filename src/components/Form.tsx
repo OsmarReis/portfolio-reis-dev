@@ -46,7 +46,7 @@ export default function Form() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6 max-w-96">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-6 grow basis-80 max-w-[450px]">
       <h1 className="text-2xl font-medium mb-2 pl-1">Say Hi!</h1>
       <InputLayout
         id={form_content.id.name}
